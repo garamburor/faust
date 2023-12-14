@@ -1,0 +1,3 @@
+import("stdfaust.lib");
+wave = \(freq).(freq/ma.SR : (+, 1 : fmod) ~ _);
+process = wave(440) * hslider("gain", 0, 0, 1, 0.01);
